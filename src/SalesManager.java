@@ -14,4 +14,20 @@ public class SalesManager {
         }
         return max;
     }
+    public int aver() {
+        int max = -1;
+        int min = 1000000000;
+        int sum = 0;
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] > max) {
+                max = sales[i];
+            }
+            if (sales[i] < min) {
+                min = sales[i];
+            }
+           sum += sales[i];
+        }
+        int aver = (sum - max - min) / (sales.length - 2);
+        return  aver;
+    }
 }
